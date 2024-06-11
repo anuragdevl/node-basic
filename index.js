@@ -5,6 +5,19 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const githubData = 
+  
+        {
+            "ID": "001",
+            "Name": "Anurag Singh",
+            "City": "Noida",
+            "Address": "1 Wall Street, Apt 5",
+            "Mobile":"9616480655",
+            
+        }
+
+
+
 app.get('/', (req, res) => {
     res.send('Hello world home page');
 })
@@ -19,6 +32,10 @@ app.get('/login', (req, res) => {
 
 app.get('/youtube',(req,res)=>{
    res.send('<h2>This is a youtube navigation page</h2>')
+})
+
+app.get('/github',(req,res)=>{
+ res.json(githubData);
 })
 
 app.listen(process.env.PORT, () => {
